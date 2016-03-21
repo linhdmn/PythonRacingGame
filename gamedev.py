@@ -31,7 +31,7 @@ carImg = pygame.image.load('car1.png')
 
 ################
 def things_dodged(count):
-	font =  pygame.font.SysFont(None, 25)
+	font =  pygame.font.SysFont("comicsansms", 25)
 	text = font.render("Dodged: " + str(count), True, black)
 	gameDisplay.blit(text, (0, 0))
 
@@ -53,7 +53,7 @@ def text_objects(text, font):
 
 #################
 def message_display(text):
-	largeText = pygame.font.Font('freesansbold.ttf', 115)
+	largeText = pygame.font.SysFont("comicsansms", 115)
 	TextSurf, TextRect = text_objects(text, largeText)
 	TextRect.center = ((display_width / 2), (display_height / 2))
 	gameDisplay.blit(TextSurf, TextRect)
@@ -88,7 +88,7 @@ def button(msg, x, y, w, h, ic, ac, action = None):
 	else:
 		pygame.draw.rect(gameDisplay, ic, (x, y, w, h))
 
-	smallText = pygame.font.Font("freesansbold.ttf", 20)
+	smallText = pygame.font.SysFont("comicsansms", 20)
 	TextSurf, TextRect = text_objects(msg, smallText)
 	TextRect.center = ( (x + (w / 2)), (y + (h / 2)) )
 	gameDisplay.blit(TextSurf, TextRect)
@@ -105,7 +105,7 @@ def game_intro():
 				quit()
 
 		gameDisplay.fill(white)
-		largeText = pygame.font.Font('freesansbold.ttf', 115)
+		largeText = pygame.font.SysFont("comicsansms", 115)
 		TextSurf, TextRect = text_objects("Racing game", largeText)
 		TextRect.center = ((display_width / 2), (display_height / 2))
 		gameDisplay.blit(TextSurf, TextRect)
